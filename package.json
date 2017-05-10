@@ -1,0 +1,38 @@
+{
+  "name": "fair-weather",
+  "version": "1.0.0",
+  "description": "A Chrome extension with weather details.",
+  "author": "Graham Nessler",
+  "license": "ISC",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-register": "^6.14.0",
+    "css-loader": "^0.25.0",
+    "escape-html": "^1.0.3",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^11.2.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.5.0",
+    "node-libs-browser": "^1.0.0",
+    "style-loader": "^0.13.1"
+  },
+  "dependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.10.3"
+  }
+}

@@ -1,8 +1,7 @@
-
-function renderStatus(statusText) {
+const renderStatus = (statusText) => {
   document.getElementById('status').textContent = statusText;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   renderStatus('foobar');
 });
