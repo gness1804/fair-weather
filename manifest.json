@@ -9,7 +9,8 @@
     "default_title": "Click for Forecast"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
 },
   "permissions": [
     "activeTab",
