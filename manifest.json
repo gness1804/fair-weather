@@ -9,9 +9,8 @@
     "default_title": "Click for Forecast"
   },
   "background": {
-    "scripts": ["eventPage.js"],
-    "persistent": false
-  },
+    "scripts": ["background.js"]
+},
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
