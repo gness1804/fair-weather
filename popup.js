@@ -1,7 +1,9 @@
-const renderStatus = (statusText) => {
-  document.getElementById('status').textContent = statusText;
+// @flow
+
+const renderStatus = (statusText: string): void => {
+  document.getElementById('status').innerText = statusText;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (): void => {
   renderStatus('foobar');
-});
+})
