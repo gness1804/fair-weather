@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Fair Weather",
+  "description": "This extension shows the current temperature for three pinned cities.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "sun.png",
+    "default_popup": "popup.html",
+    "default_title": "Click for Forecast"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
