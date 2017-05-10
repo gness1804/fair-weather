@@ -9,7 +9,7 @@
     "default_title": "Click for Forecast"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["scripts/background.js"],
     "persistent": false
 },
   "permissions": [
