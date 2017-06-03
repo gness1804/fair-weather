@@ -1,5 +1,10 @@
 const zip = document.querySelector('#zip-entry-field')
 const submitButton = document.querySelector('#submit-button')
+const output = document.querySelector('#output')
+
+const populateTemp = (temp) => {
+  output.innerText = temp
+}
 
 const makeMainAPICall = () => {
   const zipVal = zip.value
@@ -11,9 +16,7 @@ const makeMainAPICall = () => {
     if (hitAPI.readyState === XMLHttpRequest.DONE) {
       if (hitAPI.status === 200) {
         const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f
-        // temporary for debugging 
-        const output = document.querySelector('#output')
-        output.innerText = temp
+        populateTemp(temp)
       } else {
         alert('There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.')
       }
