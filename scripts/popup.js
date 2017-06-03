@@ -3,7 +3,7 @@ const submitButton = document.querySelector('#submit-button');
 const output = document.querySelector('#output');
 
 const populateTemp = (zipVal, temp) => {
-  output.innerText = `The weather in ${zipVal} is ${Math.floor(Math.round(temp))} degrees F.`;
+  output.innerText = `The temperature in ${zipVal} is ${Math.floor(Math.round(temp))} degrees F.`;
 };
 
 const saveZipToLocalStorage = (zipVal) => {
