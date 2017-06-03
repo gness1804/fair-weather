@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Fair Weather",
-  "description": "This extension shows the current temperature for three pinned cities.",
+  "description": "This extension shows the current temperature for a location based on zip code.",
   "version": "1.0",
   "browser_action": {
     "default_icon": "images/sun.png",
