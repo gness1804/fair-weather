@@ -2,5 +2,4 @@
 const saveZipToLocalStorage = (zipVal) => {
   localStorage.setItem('zipVal', zipVal);
 };
-
 /* eslint-enable no-unused-vars */

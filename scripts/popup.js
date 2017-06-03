@@ -1,10 +1,5 @@
 const zip = document.querySelector('#zip-entry-field');
 const submitButton = document.querySelector('#submit-button');
-const output = document.querySelector('#output');
-
-const populateTemp = (zipVal, temp) => {
-  output.innerText = `The temperature in ${zipVal} is ${Math.floor(Math.round(temp))} degrees F.`;
-};
 
 const makeMainAPICall = (savedZip) => {
   const zipVal = zip.value || savedZip;
@@ -16,8 +11,8 @@ const makeMainAPICall = (savedZip) => {
     if (hitAPI.readyState === XMLHttpRequest.DONE) {
       if (hitAPI.status === 200) {
         const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f;
-        populateTemp(zipVal, temp);
         /* eslint-disable no-undef */
+        populateTemp(zipVal, temp);
         saveZipToLocalStorage(zipVal);
         /* eslint-enable no-undef */
       } else {
