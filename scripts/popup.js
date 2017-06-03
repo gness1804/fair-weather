@@ -10,8 +10,8 @@ const saveZipToLocalStorage = (zipVal) => {
   localStorage.setItem('zipVal', zipVal);
 };
 
-const makeMainAPICall = () => {
-  const zipVal = zip.value;
+const makeMainAPICall = (savedZip) => {
+  const zipVal = zip.value || savedZip;
   const hitAPI = new XMLHttpRequest();
   const url = `http://api.wunderground.com/api/47fe8304fc0c9639/conditions/q/${zipVal}.json`;
   hitAPI.open('GET', url, true);
@@ -32,3 +32,10 @@ const makeMainAPICall = () => {
 submitButton.addEventListener('click', () => {
   makeMainAPICall();
 });
+
+(function getWeatherOnLoad() {
+  const savedZip = localStorage.getItem('zipVal');
+  if (savedZip) {
+    makeMainAPICall(savedZip);
+  }
+}());
