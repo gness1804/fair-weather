@@ -1,13 +1,17 @@
-const zip = document.querySelector('#zip-entry-field')
-const submitButton = document.querySelector('#submit-button')
-const output = document.querySelector('#output')
+const zip = document.querySelector('#zip-entry-field');
+const submitButton = document.querySelector('#submit-button');
+const output = document.querySelector('#output');
 
 const populateTemp = (temp) => {
-  output.innerText = temp
-}
+  output.innerText = temp;
+};
+
+const saveZipToLocalStorage = (zipVal) => {
+  localStorage.setItem('zipVal', zipVal);
+};
 
 const makeMainAPICall = () => {
-  const zipVal = zip.value
+  const zipVal = zip.value;
   const hitAPI = new XMLHttpRequest();
   const url = `http://api.wunderground.com/api/47fe8304fc0c9639/conditions/q/${zipVal}.json`;
   hitAPI.open('GET', url, true);
@@ -15,15 +19,16 @@ const makeMainAPICall = () => {
   hitAPI.onreadystatechange = () => {
     if (hitAPI.readyState === XMLHttpRequest.DONE) {
       if (hitAPI.status === 200) {
-        const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f
-        populateTemp(temp)
+        const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f;
+        populateTemp(temp);
+        saveZipToLocalStorage(zipVal);
       } else {
-        alert('There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.')
+        alert('There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.');
       }
     }
-  }
-}
+  };
+};
 
 submitButton.addEventListener('click', () => {
-  makeMainAPICall()
-})
+  makeMainAPICall();
+});
