@@ -6,10 +6,6 @@ const populateTemp = (zipVal, temp) => {
   output.innerText = `The temperature in ${zipVal} is ${Math.floor(Math.round(temp))} degrees F.`;
 };
 
-const saveZipToLocalStorage = (zipVal) => {
-  localStorage.setItem('zipVal', zipVal);
-};
-
 const makeMainAPICall = (savedZip) => {
   const zipVal = zip.value || savedZip;
   const hitAPI = new XMLHttpRequest();
@@ -21,7 +17,9 @@ const makeMainAPICall = (savedZip) => {
       if (hitAPI.status === 200) {
         const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f;
         populateTemp(zipVal, temp);
+        /* eslint-disable no-undef */
         saveZipToLocalStorage(zipVal);
+        /* eslint-enable no-undef */
       } else {
         alert('There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.');
       }
