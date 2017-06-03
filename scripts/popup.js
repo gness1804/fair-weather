@@ -27,6 +27,3 @@ const makeMainAPICall = () => {
 submitButton.addEventListener('click', () => {
   makeMainAPICall()
 })
-
-
-

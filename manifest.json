@@ -8,10 +8,6 @@
     "default_popup": "popup.html",
     "default_title": "Click for Forecast"
   },
-  "background": {
-    "scripts": ["scripts/background.js"],
-    "persistent": false
-},
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
