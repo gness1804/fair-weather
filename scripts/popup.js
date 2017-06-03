@@ -30,5 +30,9 @@ submitButton.addEventListener('click', () => {
   const savedZip = localStorage.getItem('zipVal');
   if (savedZip) {
     makeMainAPICall(savedZip);
+  } else {
+    /* eslint-disable no-undef */
+    output.innerText = 'You currently have no saved location. Please enter a five-digit US zip code and click submit.';
+    /* eslint-enable no-undef */
   }
 }());
