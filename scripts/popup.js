@@ -11,8 +11,10 @@ const makeMainAPICall = (savedZip) => {
     if (hitAPI.readyState === XMLHttpRequest.DONE) {
       if (hitAPI.status === 200) {
         const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f;
+        const city = JSON.parse(hitAPI.responseText).current_observation.display_location.city;
+        const state = JSON.parse(hitAPI.responseText).current_observation.display_location.state;
         /* eslint-disable no-undef */
-        populateTemp(zipVal, temp);
+        populateTemp(zipVal, temp, city, state);
         saveZipToLocalStorage(zipVal);
         /* eslint-enable no-undef */
       } else {
