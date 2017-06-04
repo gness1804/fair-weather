@@ -8,13 +8,18 @@ body {
     width: 25rem;
 }
 
+h1 {
+    font-size: 2.25rem;
+}
+
 #output {
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
 
 #output .figure {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 0;
 }
 
 #icon {
@@ -22,7 +27,7 @@ body {
 }
 
 #icon img {
-    height: 4rem;
+    height: 4.5rem;
 }
 
 .chilly {

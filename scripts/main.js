@@ -23,10 +23,10 @@ const makeMainAPICall = (savedZip) => {
         });
         saveZipToLocalStorage(zipVal);
       } else {
-        output.innerHTML = mainError;
+        activateErrorState();
       }
     } else {
-      output.innerHTML = mainError;
+      activateErrorState();
       /* eslint-enable no-undef */
     }
   };
@@ -35,11 +35,11 @@ const makeMainAPICall = (savedZip) => {
 submitButton.addEventListener('click', () => {
   if (!zip.value) {
     /* eslint-disable no-undef */
-    output.innerHTML = mainError;
+    activateErrorState();
     return;
   }
   if (!validateZip(zip.value)) {
-    output.innerHTML = mainError;
+    activateErrorState();
     return;
     /* eslint-enable no-undef */
   }
