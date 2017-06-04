@@ -1,8 +1,9 @@
 /* global it, expect, describe, assert */
 const assert = require('chai').assert;
+const validateZip = require('../helpers/validateZip');
 
-describe('testing suite works', () => {
-  it('works', () => {
-    assert.equal(1, 1);
+describe('validateZip', () => {
+  it('should be a function', () => {
+    assert.isFunction(validateZip);
   });
 });

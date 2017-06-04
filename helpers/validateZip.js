@@ -7,3 +7,7 @@ const validateZip = (zip) => {
   return true;
 };
 /* eslint-enable no-unused-vars */
+
+if (typeof document === 'undefined') {
+  module.exports = validateZip;
+}
