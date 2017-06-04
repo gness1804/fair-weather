@@ -3,7 +3,40 @@ html {
 }
 
 body {
-    height: 18.75rem;
+    height: 25rem;
     text-align: center;
-    width: 18.75rem;
+    width: 25rem;
+}
+
+#output {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+#output .figure {
+    font-size: 2rem;
+}
+
+#icon {
+    margin-bottom: 2rem;
+}
+
+#icon img {
+    height: 4rem;
+}
+
+.chilly {
+    color: #2E7CC7;
+}
+
+.cold {
+    color: #180FC1;
+}
+
+.hot {
+     color: #EB2C08;
+}
+
+.ideal {
+    color: #238623;
 }

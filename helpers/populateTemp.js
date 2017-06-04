@@ -20,13 +20,22 @@ const populateTemp = (options) => {
     /* eslint-enable no-undef */
     return;
   }
+  let color;
+  if (options.temp < 50) {
+    color = 'cold';
+  } else if (options.temp < 65) {
+    color = 'chilly';
+  } else if (options.temp < 80) {
+    color = 'ideal';
+  } else {
+    color = 'hot';
+  }
   output.innerHTML = `
   <div>
     <h3>Current temperature in ${options.city}, ${options.state}:</h3>
 
-    <p>${Math.floor(Math.round(options.temp))}</p>
+    <p class="figure ${color}">${Math.floor(Math.round(options.temp))}</p>
 
-    <p>degrees F.</p>
   </div>
   `;
 
