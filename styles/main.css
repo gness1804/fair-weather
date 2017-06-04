@@ -45,3 +45,14 @@ h1 {
 .ideal {
     color: #238623;
 }
+
+#submit-button {
+    background-color:rgb(228, 243, 230);
+    border-radius: none;
+    margin-left: 1rem;
+}
+
+#submit-button:hover {
+    background-color: #FFF;
+    cursor: pointer;
+}
