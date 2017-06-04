@@ -14,7 +14,7 @@ describe('populateTemp', () => {
 
   it('should return expected data with a given input', () => {
     populateTemp(fakeTemp, fakeCity, fakeState);
-    assert.strictEqual(output.innerText, 'The temperature in Blacksburg, VA is 60 degrees F.');
+    assert.strictEqual(output.innerText, '\n  Current temperature in Blacksburg, VA:\n\n  60\n\n  degrees F.\n  ');
   });
 
   it('should return an error message for bad inputs', () => {

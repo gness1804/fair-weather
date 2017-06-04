@@ -15,7 +15,13 @@ const populateTemp = (temp, city, state) => {
     /* eslint-enable no-undef */
     return;
   }
-  output.innerText = `The temperature in ${city}, ${state} is ${Math.floor(Math.round(temp))} degrees F.`;
+  output.innerText = `
+  Current temperature in ${city}, ${state}:
+
+  ${Math.floor(Math.round(temp))}
+
+  degrees F.
+  `;
 };
 /* eslint-enable no-unused-vars */
 
