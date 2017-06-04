@@ -1,4 +1,11 @@
-const output = document.querySelector('#output');
+let output;
+if (typeof document === 'undefined') {
+  output = {
+    innerText: '',
+  };
+} else {
+  output = document.querySelector('#output');
+}
 
 /* eslint-disable no-unused-vars */
 const populateTemp = (temp, city, state) => {
