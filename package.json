@@ -6,7 +6,8 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint .",
-    "flow": "flow"
+    "flow": "flow",
+    "test": "mocha"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -34,11 +35,13 @@
   "dependencies": {
     "axios": "^0.16.1",
     "babel-eslint": "^6.1.2",
+    "chai": "^4.0.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.4.2"
   },
   "false": {}
 }
