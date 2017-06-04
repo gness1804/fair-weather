@@ -16,4 +16,13 @@ describe('populateTemp', () => {
     populateTemp(fakeTemp, fakeCity, fakeState);
     assert.strictEqual(output.innerText, 'The temperature in Blacksburg, VA is 60 degrees F.');
   });
+
+  it('should return an error message for bad inputs', () => {
+    populateTemp(fakeCity, fakeState);
+    assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
+    populateTemp(fakeTemp, fakeCity);
+    assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
+    populateTemp(fakeTemp, fakeState);
+    assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
+  });
 });

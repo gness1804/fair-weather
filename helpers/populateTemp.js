@@ -9,6 +9,12 @@ if (typeof document === 'undefined') {
 
 /* eslint-disable no-unused-vars */
 const populateTemp = (temp, city, state) => {
+  if (!temp || !city || !state) {
+    /* eslint-disable no-undef */
+    output.innerText = 'There was a problem fetching your data.';
+    /* eslint-enable no-undef */
+    return;
+  }
   output.innerText = `The temperature in ${city}, ${state} is ${Math.floor(Math.round(temp))} degrees F.`;
 };
 /* eslint-enable no-unused-vars */
