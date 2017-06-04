@@ -8,17 +8,17 @@ if (typeof document === 'undefined') {
 }
 
 /* eslint-disable no-unused-vars */
-const populateTemp = (temp, city, state) => {
-  if (!temp || !city || !state) {
+const populateTemp = (options) => {
+  if (!options.temp || !options.city || !options.state) {
     /* eslint-disable no-undef */
     output.innerText = 'There was a problem fetching your data.';
     /* eslint-enable no-undef */
     return;
   }
   output.innerText = `
-  Current temperature in ${city}, ${state}:
+  Current temperature in ${options.city}, ${options.state}:
 
-  ${Math.floor(Math.round(temp))}
+  ${Math.floor(Math.round(options.temp))}
 
   degrees F.
   `;

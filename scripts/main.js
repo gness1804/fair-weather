@@ -13,8 +13,14 @@ const makeMainAPICall = (savedZip) => {
         const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f;
         const city = JSON.parse(hitAPI.responseText).current_observation.display_location.city;
         const state = JSON.parse(hitAPI.responseText).current_observation.display_location.state;
+        // need icon here
         /* eslint-disable no-undef */
-        populateTemp(temp, city, state);
+        populateTemp({
+          temp,
+          city,
+          state,
+          icon,
+        });
         saveZipToLocalStorage(zipVal);
       } else {
         output.innerHTML = mainError;

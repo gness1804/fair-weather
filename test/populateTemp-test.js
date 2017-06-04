@@ -13,16 +13,29 @@ describe('populateTemp', () => {
   });
 
   it('should return expected data with a given input', () => {
-    populateTemp(fakeTemp, fakeCity, fakeState);
+    populateTemp({
+      temp: fakeTemp,
+      city: fakeCity,
+      state: fakeState,
+    });
     assert.strictEqual(output.innerText, '\n  Current temperature in Blacksburg, VA:\n\n  60\n\n  degrees F.\n  ');
   });
 
   it('should return an error message for bad inputs', () => {
-    populateTemp(fakeCity, fakeState);
+    populateTemp({
+      city: fakeCity,
+      state: fakeState,
+    });
     assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
-    populateTemp(fakeTemp, fakeCity);
+    populateTemp({
+      temp: fakeTemp,
+      city: fakeCity,
+    });
     assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
-    populateTemp(fakeTemp, fakeState);
+    populateTemp({
+      temp: fakeTemp,
+      state: fakeState,
+    });
     assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
   });
 });
