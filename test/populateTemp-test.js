@@ -19,7 +19,7 @@ describe('populateTemp', () => {
       state: fakeState,
       icon: fakeIcon,
     });
-    assert.strictEqual(output.innerText, '\n  Current temperature in Blacksburg, VA:\n\n  60\n\n  degrees F.\n  ');
+    assert.strictEqual(output.innerHTML, '\n  <div>\n    <h3>Current temperature in Blacksburg, VA:</h3>\n\n    <p>60</p>\n\n    <p>degrees F.</p>\n  </div>\n  ');
     assert.strictEqual(icon.innerHTML, '<img src="http://s3-us-west-2.amazonaws.com/americankennelclub/Cairn-Terrier.jpg"/>');
   });
 
@@ -28,16 +28,16 @@ describe('populateTemp', () => {
       city: fakeCity,
       state: fakeState,
     });
-    assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
+    assert.strictEqual(output.innerHTML, 'There was a problem fetching your data.');
     populateTemp({
       temp: fakeTemp,
       city: fakeCity,
     });
-    assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
+    assert.strictEqual(output.innerHTML, 'There was a problem fetching your data.');
     populateTemp({
       temp: fakeTemp,
       state: fakeState,
     });
-    assert.strictEqual(output.innerText, 'There was a problem fetching your data.');
+    assert.strictEqual(output.innerHTML, 'There was a problem fetching your data.');
   });
 });

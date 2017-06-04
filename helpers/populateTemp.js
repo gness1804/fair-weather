@@ -16,17 +16,20 @@ if (typeof document === 'undefined') {
 const populateTemp = (options) => {
   if (!options.temp || !options.city || !options.state) {
     /* eslint-disable no-undef */
-    output.innerText = 'There was a problem fetching your data.';
+    output.innerHTML = 'There was a problem fetching your data.';
     /* eslint-enable no-undef */
     return;
   }
-  output.innerText = `
-  Current temperature in ${options.city}, ${options.state}:
+  output.innerHTML = `
+  <div>
+    <h3>Current temperature in ${options.city}, ${options.state}:</h3>
 
-  ${Math.floor(Math.round(options.temp))}
+    <p>${Math.floor(Math.round(options.temp))}</p>
 
-  degrees F.
+    <p>degrees F.</p>
+  </div>
   `;
+
   icon.innerHTML = `<img src="${options.icon}"/>`;
 };
 /* eslint-enable no-unused-vars */
