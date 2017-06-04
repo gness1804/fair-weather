@@ -1,7 +1,7 @@
 /* global it, expect, describe, assert */
 const assert = require('chai').assert;
-const { populateTemp, output } = require('../helpers/populateTemp');
-const { fakeTemp, fakeCity, fakeState } = require('./helpers/test-data');
+const { populateTemp, output, icon } = require('../helpers/populateTemp');
+const { fakeTemp, fakeCity, fakeState, fakeIcon } = require('./helpers/test-data');
 
 describe('populateTemp', () => {
   it('should be a function', () => {
@@ -17,8 +17,10 @@ describe('populateTemp', () => {
       temp: fakeTemp,
       city: fakeCity,
       state: fakeState,
+      icon: fakeIcon,
     });
     assert.strictEqual(output.innerText, '\n  Current temperature in Blacksburg, VA:\n\n  60\n\n  degrees F.\n  ');
+    assert.strictEqual(icon.innerHTML, '<img src="http://s3-us-west-2.amazonaws.com/americankennelclub/Cairn-Terrier.jpg"/>');
   });
 
   it('should return an error message for bad inputs', () => {

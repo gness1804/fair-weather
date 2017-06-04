@@ -13,7 +13,7 @@ const makeMainAPICall = (savedZip) => {
         const temp = JSON.parse(hitAPI.responseText).current_observation.temp_f;
         const city = JSON.parse(hitAPI.responseText).current_observation.display_location.city;
         const state = JSON.parse(hitAPI.responseText).current_observation.display_location.state;
-        // need icon here
+        const icon = JSON.parse(hitAPI.responseText).current_observation.icon_url;
         /* eslint-disable no-undef */
         populateTemp({
           temp,

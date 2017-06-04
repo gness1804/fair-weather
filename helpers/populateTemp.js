@@ -1,10 +1,15 @@
 let output;
+let icon;
 if (typeof document === 'undefined') {
   output = {
     innerText: '',
   };
+  icon = {
+    innerHTML: '',
+  };
 } else {
   output = document.querySelector('#output');
+  icon = document.querySelector('#icon');
 }
 
 /* eslint-disable no-unused-vars */
@@ -22,6 +27,7 @@ const populateTemp = (options) => {
 
   degrees F.
   `;
+  icon.innerHTML = `<img src="${options.icon}"/>`;
 };
 /* eslint-enable no-unused-vars */
 
@@ -29,5 +35,6 @@ if (typeof document === 'undefined') {
   module.exports = {
     populateTemp,
     output,
+    icon,
   };
 }
