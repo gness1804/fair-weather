@@ -16,15 +16,27 @@ const makeMainAPICall = (savedZip) => {
         /* eslint-disable no-undef */
         populateTemp(zipVal, temp, city, state);
         saveZipToLocalStorage(zipVal);
-        /* eslint-enable no-undef */
       } else {
-        alert('There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.');
+        output.innerHTML = 'There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.';
       }
+    } else {
+      output.innerHTML = 'There was a problem with fetching your data. Please ensure that you have entered a five-digit US Zip code and try again.';
+      /* eslint-enable no-undef */
     }
   };
 };
 
 submitButton.addEventListener('click', () => {
+  if (!zip.value) {
+    /* eslint-disable no-undef */
+    output.innerHTML = 'Error: You must enter a five-digit US zip code.';
+    return;
+  }
+  if (!validateZip(zip.value)) {
+    output.innerHTML = 'Please ensure that you have entered a valid five-digit US Zip code and try again.';
+    return;
+    /* eslint-enable no-undef */
+  }
   makeMainAPICall();
 });
 
