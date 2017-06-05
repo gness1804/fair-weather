@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    font-family: 'Acme', sans-serif;
     height: 25rem;
     text-align: center;
     width: 25rem;
