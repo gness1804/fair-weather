@@ -22,6 +22,7 @@ const makeMainAPICall = (savedZip) => {
           icon,
         });
         saveZipToLocalStorage(zipVal);
+        createLink(city, state);
       } else {
         activateErrorState();
       }
