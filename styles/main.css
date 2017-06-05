@@ -12,6 +12,22 @@ h1 {
     font-size: 2.25rem;
 }
 
+a {
+    font-size: 1rem;
+    text-decoration: none;
+    color:rgb(64, 40, 240);
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(193, 22, 163);
+}
+
+a:hover {
+    text-decoration: none;
+    color:rgb(235, 53, 30);
+}
+
 #output {
     margin-bottom: 2rem;
     margin-top: 2rem;
