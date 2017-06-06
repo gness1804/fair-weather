@@ -1,8 +1,9 @@
+// @flow
 let output;
 let icon;
 if (typeof document === 'undefined') {
   output = {
-    innerText: '',
+    innerHTML: '',
   };
   icon = {
     innerHTML: '',
@@ -13,7 +14,7 @@ if (typeof document === 'undefined') {
 }
 
 /* eslint-disable no-unused-vars */
-const populateTemp = (options) => {
+const populateTemp = (options: Object): void => {
   if (!options.temp || !options.city || !options.state) {
     /* eslint-disable no-undef */
     output.innerHTML = 'There was a problem fetching your data.';
