@@ -1,6 +1,6 @@
 /* global it, expect, describe, assert */
 const assert = require('chai').assert;
-const validateZip = require('../helpers/validateZip');
+const validateZip = require('../output/validateZip');
 const { validZip, invalidZipText, invalidZipLength } = require('./helpers/test-data');
 
 describe('validateZip', () => {

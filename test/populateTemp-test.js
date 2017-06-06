@@ -1,6 +1,6 @@
 /* global it, expect, describe, assert */
 const assert = require('chai').assert;
-const { populateTemp, output, icon } = require('../helpers/populateTemp');
+const { populateTemp, output, icon } = require('../output/populateTemp');
 const { fakeTemp, fakeCity, fakeState, fakeIcon } = require('./helpers/test-data');
 
 describe('populateTemp', () => {
