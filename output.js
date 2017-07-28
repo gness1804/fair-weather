@@ -1,7 +1,8 @@
+//      
 const zip = document.querySelector('#zip-entry-field');
 const submitButton = document.querySelector('#submit-button');
 
-const makeMainAPICall = (savedZip) => {
+const makeMainAPICall = (savedZip        )       => {
   const zipVal = zip.value || savedZip;
   const hitAPI = new XMLHttpRequest();
   const url = `http://api.wunderground.com/api/47fe8304fc0c9639/conditions/q/${zipVal}.json`;
@@ -44,7 +45,7 @@ submitButton.addEventListener('click', () => {
     return;
     /* eslint-enable no-undef */
   }
-  makeMainAPICall();
+  makeMainAPICall('');
 });
 
 (function getWeatherOnLoad() {
