@@ -1,6 +1,7 @@
 // @flow
 const zip = document.querySelector('#zip-entry-field');
 const submitButton = document.querySelector('#submit-button');
+const sunriseButton = document.querySelector('#sunrise-sunset-container button');
 
 const makeMainAPICall = (savedZip: string): void => {
   const zipVal = zip.value || savedZip;
@@ -34,6 +35,34 @@ const makeMainAPICall = (savedZip: string): void => {
   };
 };
 
+const getSunriseSunset = async (): void => {
+  const zipVal = zip.value || await localStorage.getItem('zipVal');
+  if (!validateZip(zipVal)) {
+    activateErrorState();
+    return;
+  }
+  document.querySelector('#sunrise-results').innerText = `Result: ${zipVal}`;
+  // console.log('zipVal', zipVal)
+  const hitAPI = new XMLHttpRequest();
+  //need to put dynamic zipVal back in
+  const url = `http://api.wunderground.com/api/47fe8304fc0c9639/astronomy/q/78745.json`;
+  hitAPI.open('GET', url, true);
+  hitAPI.send();
+  hitAPI.onreadystatechange = () => {
+    if (hitAPI.readyState === XMLHttpRequest.DONE) {
+      if (hitAPI.status === 200) {
+        const sunriseHour = JSON.parse(hitAPI.responseText.moon_phase.sunrise.hour);
+        document.querySelector('#sunrise-results').innerText = `The sun will rise at ${sunriseHour}`;
+      } else {
+        // activateErrorState();
+      }
+    } else {
+      // activateErrorState();
+      /* eslint-enable no-undef */
+    }
+  };
+};
+
 submitButton.addEventListener('click', () => {
   if (!zip.value) {
     /* eslint-disable no-undef */
@@ -46,6 +75,10 @@ submitButton.addEventListener('click', () => {
     /* eslint-enable no-undef */
   }
   makeMainAPICall('');
+});
+
+sunriseButton.addEventListener('click', () => {
+  getSunriseSunset();
 });
 
 (function getWeatherOnLoad() {
