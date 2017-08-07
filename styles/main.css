@@ -64,13 +64,17 @@ a:hover {
 }
 
 #submit-button {
-    background-color:rgb(228, 243, 230);
-    border-radius: none;
+    background-color: rgb(23, 23, 210);
+    border: none;
+    border-radius: 0;
+    color: #FFF;
     margin-left: 1rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
 }
 
 #submit-button:hover {
-    background-color: #FFF;
+    background-color:rgb(136, 135, 209);
     cursor: pointer;
 }
 
